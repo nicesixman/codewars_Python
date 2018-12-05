@@ -26,7 +26,7 @@ def validBraces(string):
         return False
     else:
         print('need for algorithm')
-        return 
+        return True
 
 
 validBraces('(){}[]')
