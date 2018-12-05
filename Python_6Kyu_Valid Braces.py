@@ -22,10 +22,10 @@ def validBraces(string):
     print(new_list)
     if len(new_list) % 2 == 1:
         return False
-    elif sum(new_list) == 0:
-        print('need for algorithm')
-        return True
+    elif sum(new_list) != 0:
+        return False
     else:
+        print('need for algorithm')
         return False
 
 
