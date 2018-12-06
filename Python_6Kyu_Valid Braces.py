@@ -2,31 +2,32 @@ def validBraces(string):
     new_list = []
     for str_length in range(0, len(string)):
         if string[str_length] == '(':
-            new_list.append(1)
-            continue
-        elif string[str_length] == ')':
-            new_list.append(-1)
+            new_list.append('(')
+            print(new_list)
             continue
         elif string[str_length] == '{':
-            new_list.append(2)
-            continue
-        elif string[str_length] == '}':
-            new_list.append(-2)
+            new_list.append('{')
+            print(new_list)
             continue
         elif string[str_length] == '[':
-            new_list.append(3)
+            new_list.append('[')
+            print(new_list)
             continue
-        elif string[str_length] == ']':
-            new_list.append(-3)
+        elif string[str_length-1] == '(' and string[str_length] == ')':
+            new_list.pop()
+            print(new_list)
             continue
-    print(new_list)
-    if len(new_list) % 2 == 1:
-        return False
-    elif sum(new_list) != 0:
-        return False
-    else:
-        print('need for algorithm')
-        return True
+        elif string[str_length-1] == '{' and string[str_length] == '}':
+            new_list.pop()
+            print(new_list)
+            continue
+        elif string[str_length-1] == '[' and string[str_length] == ']':
+            new_list.pop()
+            print(new_list)
+            continue
+        else:
+            return False
+    return True
 
 
-validBraces('(){}[]')
+validBraces('(({{[[]]}}))')
